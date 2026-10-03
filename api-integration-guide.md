@@ -109,3 +109,4 @@ Run this checklist during API discovery, sandbox certification, and integration 
 4. **Resilient Retry Design:** Never implement automated retry loops for mutating requests without idempotency guarantees or status lookups.
 5. **Observability:** Propagate unified correlation IDs across headers, logs, and database records. Log sanitized payloads (masking PII/PCI).
 6. **Reconciliation & Runbooks:** Implement daily automated reconciliation jobs and publish incident response runbooks before opening production traffic.
+7. **Reusable Cross-Vendor Requirements:** When a client introduces an authentication, encryption/decryption, or other requirement that may apply to multiple vendors, implement it in a central reusable component rather than duplicating it in a vendor integration. Document its behavior, configuration, security considerations, and usage so future integrations can adopt it consistently; keep only genuinely vendor-specific details in the vendor adapter.
